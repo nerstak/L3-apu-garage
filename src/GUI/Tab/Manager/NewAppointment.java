@@ -188,5 +188,7 @@ public class NewAppointment extends GUI.TabBase implements ActionListener {
         // New appointment and writing in file
         Main.appointmentsList.add(new Appointment(appointmentID,customerID,technicianID,type,price,false," "," ",_daySelected, false));
         Files.writeAppointments(Main.appointmentsList);
+        Main.managerWindow.dispose();
+        Main.managerWindow.Load();
     }
 }

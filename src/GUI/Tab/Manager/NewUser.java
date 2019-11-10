@@ -196,5 +196,7 @@ public class NewUser extends GUI.TabBase implements ActionListener {
         }
 
         Projet.Files.writeUsers();
+        Main.managerWindow.dispose();
+        Main.managerWindow.Load();
     }
 }
