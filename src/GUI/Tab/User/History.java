@@ -64,8 +64,7 @@ public class History extends GUI.TabBase implements ActionListener, ListSelectio
         listComponents.add(_feedbackTextArea);
 
         // Comment
-        _commentLabel = new JLabel("Your comment:");
-        _commentLabel = new JLabel("Your comment:");
+        _commentLabel = new JLabel("Comment from customer:");
         listComponents.add(_commentLabel);
         _commentTextArea = new JTextArea(5, 10);
         listComponents.add(_commentTextArea);
@@ -93,11 +92,11 @@ public class History extends GUI.TabBase implements ActionListener, ListSelectio
             case "Technician":
                 // Text and column of Technician
                 columns.add("Customer");
-                _commentLabel.setText("Comment from customer");
                 _feedbackLabel.setText("Your feedback");
                 break;
             case "Customer":
-                // Column of Customer (text already set)
+                // Text and column of Customer
+                _commentLabel.setText("Your comment");
                 columns.add("Technician");
                 break;
             case "Manager":
@@ -138,6 +137,10 @@ public class History extends GUI.TabBase implements ActionListener, ListSelectio
         if (Main.user.getType().equals("Customer")) {
             _doneButton.setVisible(false);
         }
+        // Manager cannot submit remarks
+        if(Main.user.getType().equals("Manager")) {
+            _submitButton.setVisible(false);
+        }
     }
 
     @Override
@@ -146,12 +149,14 @@ public class History extends GUI.TabBase implements ActionListener, ListSelectio
             // Submit button for comment and feedback
             if (checkValues()) {
                 updateValues();
+                displayFields();
             }
         }
         if (e.getSource() == _doneButton) {
             // Done button to set appointment as done
             _selectedAppointment.setDone(true);
             _doneButton.setEnabled(false);
+
 
             Files.writeAppointments(Main.appointmentsList);
         }
@@ -233,10 +238,12 @@ public class History extends GUI.TabBase implements ActionListener, ListSelectio
      */
     private void displayFields() {
         setFieldsAvailability(true);
-        if (Main.user.getType().equals("Technician")) {
+        if (!Main.user.getType().equals("Customer")) {
             // Done button
             if (!_selectedAppointment.isDone()) {
                 _doneButton.setEnabled(true);
+            } else {
+                _doneButton.setEnabled(false);
             }
 
 
@@ -244,7 +251,9 @@ public class History extends GUI.TabBase implements ActionListener, ListSelectio
             if (_selectedAppointment.getFeedback().isBlank()) {
                 // No feedback
                 _feedbackTextArea.setText("");
-                _feedbackTextArea.setEditable(true);
+                if(Main.user.getType().equals("Technician")) {
+                    _feedbackTextArea.setEditable(true);
+                }
             } else {
                 // Feedback already present
                 _feedbackTextArea.setText(_selectedAppointment.getFeedback());

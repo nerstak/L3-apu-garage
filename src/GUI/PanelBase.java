@@ -41,6 +41,7 @@ public abstract class PanelBase extends JPanel implements ActionListener {
         // Display at correct dimension
         _frame.pack();
         _frame.setVisible(true);
+        _frame.setResizable(false);
     }
 
     protected void addLogOutButtonToTab() {

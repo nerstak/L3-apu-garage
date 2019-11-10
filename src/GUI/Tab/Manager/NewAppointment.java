@@ -78,7 +78,7 @@ public class NewAppointment extends GUI.TabBase implements ActionListener {
         _dayComboBox = new JComboBox(listNbToString(1,31));
         listComponents.add(_dayComboBox);
         listComponents.add(new JLabel("Time"));
-        _timeComboBox = new JComboBox(listNbToString(0,23));
+        _timeComboBox = new JComboBox(listNbToString(8,20));
         listComponents.add(_timeComboBox);
         listComponents.add(new JLabel());
 

@@ -9,6 +9,17 @@ Normal
 false
 false
 
+33
+2019-11-26T11:00
+2
+5
+Normal
+10.0
+ 
+ 
+false
+false
+
 32
 2019-11-17T13:00
 3
@@ -31,25 +42,36 @@ Major
 false
 false
 
+34
+2019-10-11T13:00
+6
+1
+Normal
+10.0
+ 
+Not enough maintenance
+false
+false
+
 29
 2019-01-03T16:00
 3
 1
 Major
 50.0
- 
+Very pleasant person.
  
 false
 true
 
-33
-2019-11-26T11:00
+35
+2019-10-22T16:00
 2
-5
+1
 Normal
-10.0
+14.0
  
- 
+Cooler than u
 false
 false
 

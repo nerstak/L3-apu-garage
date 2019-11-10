@@ -83,6 +83,7 @@ public class Login<T extends User> extends JFrame implements ActionListener {
         add(userComboBox, gbc);
 
         setVisible(true);
+        setResizable(false);
     }
 
     @Override

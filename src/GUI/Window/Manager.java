@@ -25,7 +25,7 @@ public class Manager extends GUI.PanelBase {
         tabbedPane.setMnemonicAt(i++, KeyEvent.VK_1);
 
         _pricingPanel = new GUI.Tab.Manager.Pricing();
-        tabbedPane.addTab("Edit price", _pricingPanel);
+        tabbedPane.addTab("Edit prices", _pricingPanel);
         tabbedPane.setMnemonicAt(i++, KeyEvent.VK_1);
 
         _paymentPanel = new GUI.Tab.Manager.Payment();
