@@ -13,8 +13,8 @@ public class Main {
 
     // Windows
     public static Login loginWindow;
-    public static GUI.Window.Customer customerWindow;
-    public static GUI.Window.Technician technicianWindow;
+    public static GUI.Window.CustomerTechnician customerWindow;
+    public static GUI.Window.CustomerTechnician technicianWindow;
     public static GUI.Window.Manager managerWindow;
 
     // Data
@@ -51,8 +51,8 @@ public class Main {
     }
 
     private static void createWindows() {
-        technicianWindow = new GUI.Window.Technician();
-        customerWindow = new GUI.Window.Customer();
+        technicianWindow = new GUI.Window.CustomerTechnician();
+        customerWindow = new GUI.Window.CustomerTechnician();
         managerWindow = new GUI.Window.Manager();
         loginWindow = new Login();
     }

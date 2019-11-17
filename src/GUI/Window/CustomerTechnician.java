@@ -2,15 +2,18 @@ package GUI.Window;
 
 import GUI.Tab.User.ScheduledAppointment;
 import GUI.TabBase;
+import Projet.Main;
 
 import java.awt.event.KeyEvent;
 
-public class Technician extends GUI.PanelBase {
-    private TabBase _editPanel;
-    private TabBase _historyPanel;
-    private TabBase _schedulePanel;
-
-    public Technician() {
+/**
+ * Class that holds information of Customer Window
+ */
+public class CustomerTechnician extends GUI.PanelBase {
+    private final TabBase _editPanel;
+    private final TabBase _historyPanel;
+    private final TabBase _schedulePanel;
+    public CustomerTechnician() {
         int i = 0;
         _schedulePanel = new ScheduledAppointment();
         tabbedPane.addTab("Scheduled appointment",_schedulePanel);
@@ -18,7 +21,7 @@ public class Technician extends GUI.PanelBase {
 
         _historyPanel = new GUI.Tab.User.History();
         tabbedPane.addTab("History",_historyPanel);
-        tabbedPane.setMnemonicAt(i++, KeyEvent.VK_1);
+        tabbedPane.setMnemonicAt(i++,KeyEvent.VK_1);
 
         _editPanel = new GUI.Tab.User.Edit();
         tabbedPane.addTab("Edit account",_editPanel);
@@ -31,9 +34,9 @@ public class Technician extends GUI.PanelBase {
      * Load elements and tabs
      */
     public void Load() {
-        _editPanel.Load();
-        _historyPanel.Load();
-        _schedulePanel.Load();
-        setFrame("Technician Panel");
+       _editPanel.Load();
+       _historyPanel.Load();
+       _schedulePanel.Load();
+       setFrame(Main.user.getType() + " Panel");
     }
 }

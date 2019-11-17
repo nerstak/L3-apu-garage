@@ -128,6 +128,10 @@ public class Login<T extends User> extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Load the correct window that replaces the login window
+     * @param u Object derived from User
+     */
     private void loadWindow(T u) {
         switch (u.getType()) {
             case "Manager": Main.managerWindow.Load();
