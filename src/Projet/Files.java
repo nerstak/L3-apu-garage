@@ -100,6 +100,10 @@ public class Files {
 
     }
 
+    /**
+     * Load appointments from file
+     * @return ArrayList of Appointment loaded
+     */
     public static ArrayList<Appointment> readAppointments() {
         ArrayList<Appointment> allAppointment = new ArrayList<>();
         try {
@@ -163,7 +167,6 @@ public class Files {
 
     /**
      * Write in file every appointment
-     *
      * @param list ArrayList<Appointment> List of appointment
      */
     public static void writeAppointments(ArrayList<Appointment> list) {

@@ -26,10 +26,12 @@ public class Main {
     public static User user;
     public static void main(String[] args) {
         readData();
-
         createWindows();
     }
 
+    /**
+     * Load every data
+     */
     public static void readData() {
         parameters = new Parameters();
         customersList = readUsers("Customer");
@@ -38,18 +40,27 @@ public class Main {
         appointmentsList = readAppointments();
     }
 
+    /**
+     * Load the login window (and restart the others)
+     */
     public static void loadLogin() {
-        disposeData();
+        disposeWindows();
         createWindows();
     }
 
-    private static void disposeData() {
+    /**
+     * Remove windows
+     */
+    private static void disposeWindows() {
         managerWindow.dispose();
         technicianWindow.dispose();
         customerWindow.dispose();
         user = null;
     }
 
+    /**
+     * Create windows such as they should at first launch
+     */
     private static void createWindows() {
         technicianWindow = new GUI.Window.CustomerTechnician();
         customerWindow = new GUI.Window.CustomerTechnician();

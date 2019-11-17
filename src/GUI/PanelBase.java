@@ -44,6 +44,9 @@ public abstract class PanelBase extends JPanel implements ActionListener {
         _frame.setResizable(false);
     }
 
+    /**
+     * Add a logout button
+     */
     protected void addLogOutButtonToTab() {
         _logoutButton = new JButton("Logout");
         _logoutButton.addActionListener(this);
@@ -59,6 +62,11 @@ public abstract class PanelBase extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Create a panel with only text inside
+     * @param text String to insert
+     * @return JPanel created
+     */
     private JPanel makeTextPanel(String text) {
         JPanel panel = new JPanel(false);
         JLabel filler = new JLabel(text);

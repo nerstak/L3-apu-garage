@@ -83,7 +83,7 @@ public class UserManagement<T extends User> extends GUI.TabBase implements Actio
             Main.managersList.remove(_selectedUser);
             Main.techniciansList.remove(_selectedUser);
             Main.customersList.remove(_selectedUser);
-            // We write the changement
+            // We write the new values
             Files.writeUsers();
 
             // We reload lists

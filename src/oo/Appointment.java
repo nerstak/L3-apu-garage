@@ -103,6 +103,10 @@ public class Appointment implements Comparable {
         return _appointmentID;
     }
 
+    /**
+     * Generate a receipt in a text file
+     * @param managerID int of manager creating receipt
+     */
     public void generateReceipt(int managerID) {
         User c, t;
         c = User.searchListIDUser(Main.customersList, _customerID);

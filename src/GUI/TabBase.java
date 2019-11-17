@@ -27,6 +27,9 @@ public abstract class TabBase extends JPanel
     public <T extends User> void Load() {
     }
 
+    /**
+     * Virtual method to set position and layout
+     */
     protected void SetElements(){}
 
     /**
